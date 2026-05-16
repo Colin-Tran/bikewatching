@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Bike Watching Project</title>
 
     <link rel="stylesheet" href="global.css" />
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
@@ -19,7 +19,14 @@
 </head>
 <body>
     <h1>🚴🏼‍♀️ Bikewatching</h1>
-
+    
+    <label class="time-filter">
+        Filter by time:
+        <input type="range" id="time-slider" min="-1" max="1440" value="-1" />
+        <time id="selected-time"></time>
+        <em id="any-time">(any time)</em>
+    </label>
+  
     <div id="map">
         <svg></svg>
     </div>
