@@ -43,6 +43,14 @@ body {
 
 circle {
   pointer-events: auto;
+  --color-departures: steelblue;
+    --color-arrivals: darkorange;
+    --color: color-mix(
+    in oklch,
+    var(--color-departures) calc(100% * var(--departure-ratio)),
+    var(--color-arrivals)
+    );
+    fill: var(--color);
 }
 
 header {
@@ -50,13 +58,24 @@ header {
   gap: 1em;
   align-items: baseline;
 }
-
 .time-filter {
   margin-left: auto;
+  display: grid;
+  grid-template-columns: auto 20em;
+  gap: 0.25em 0.75em;
+  align-items: center;
+}
+
+.time-filter input[type="range"] {
+  width: 20em;
+  height: 0.4em;
+  accent-color: dodgerblue;
 }
 
 .time-filter time,
 .time-filter em {
+  grid-column: 2;
+  justify-self: end;
   display: block;
 }
 
